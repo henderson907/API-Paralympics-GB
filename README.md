@@ -1,6 +1,6 @@
 # Paralympics GB API
 
-Built using Ruby 3.1.2 and Rails 7.2.2
+Built using Ruby 3.1.2 and Rails 7.2.2 with postgresql 1.1 as the database
 
 All information is taken directly from the GB paralympics [website](https://paralympics.org.uk/) and is correct as of 16/04/2025.
 
@@ -19,4 +19,4 @@ http://127.0.0.1:3000/sports
 - Returns a list of all sports in JSON format
 
 ## Database Schema
-![database schema](image.png)
+![database schema](app/assets/images/image.png)
