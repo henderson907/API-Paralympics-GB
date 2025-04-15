@@ -1,9 +1,286 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+puts "cleaning database..."
+Athlete.destroy_all
+Sport.destroy_all
+
+puts "seeding sports..."
+
+archery = Sport.create(name: "Archery")
+boccia = Sport.create(name: "Boccia")
+badminton = Sport.create(name: "Badminton")
+canoe = Sport.create(name: "Canoe")
+cycling = Sport.create(name: "Cycling")
+equestrian = Sport.create(name: "Equestrian")
+football_5_a_side = Sport.create(name: "Football 5-a-side")
+goalball = Sport.create(name: "Goalball")
+judo = Sport.create(name: "Judo")
+para_athletics = Sport.create(name: "Para Athletics")
+para_powerlifting = Sport.create(name: "Para Powerlifting")
+para_swimming = Sport.create(name: "Para Swimming")
+rowing = Sport.create(name: "Rowing")
+shooting_para_sport = Sport.create(name: "Shooting Para Sport")
+sitting_volley_ball = Sport.create(name: "Sitting Volleyball")
+table_tennis = Sport.create(name: "Table Tennis")
+taekwondo = Sport.create(name: "Taekwando")
+triathlon = Sport.create(name: "Triathlon")
+wheelchair_basketball = Sport.create(name: "Wheelchair Basketball")
+wheelchair_fencing = Sport.create(name: "Wheelchair Fencing")
+wheelchair_rugby = Sport.create(name: "Wheelchair Rugby")
+wheelchair_tennis = Sport.create(name: "Wheelchair Tennis")
+
+puts "seeding athletes..."
+
+puts "seeding Archery athletes... (4)"
+Athlete.create(name: "Nathan Macqueen", classification: "Compound Men Open", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.81,h_0.54,x_0.15,y_0.11/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/1fc78b60-6875-4710-a336-a9a087af7012", sport: archery)
+Athlete.create(name: "Jodie Grinham", classification: "Compound Women Open", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.67,h_0.45,x_0.02,y_0.09/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/7a630be3-30b8-4eb1-9926-d181dacc4a98", sport: archery)
+Athlete.create(name: "Phoebe Paterson Pine", classification: "Compound Women Open", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.82,h_0.55,x_0.1,y_0.06/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/372cfaf4-18ff-49bd-8266-0a5428fdd123", sport: archery)
+Athlete.create(name: "Victoria Kingstone", classification: "Women WI", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.9,h_0.6,x_0.07,y_0.06/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/a0ac2558-5c84-4ab4-af27-f6e19aa4ac7f", sport: archery)
+
+puts "seeding Boccia athletes... (7)"
+Athlete.create(name: "Patrick Wilson", classification: "BC3 (competition partner Meredith Greenwood)", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.65,h_0.47,x_0.18,y_0.04/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/31b3f58f-9f55-4353-afe5-1e103ed41ab3", sport: boccia)
+Athlete.create(name: "Claire Taggart", classification: "BC2", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.85,h_0.56,x_0.09,y_0.29/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/66e1d95c-ab43-4a8f-83ea-949496f1dc69", sport: boccia)
+Athlete.create(name: "David Smith", classification: "BC1 (competition partner Misel Kranjcec)", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.74,h_0.49,x_0.21,y_0.1/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/936d66fb-3326-4526-aa97-1b99ea4b4f85", sport: boccia)
+Athlete.create(name: "Stephen McGuire", classification: "BC4", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.47,h_0.7,x_0.25,y_0.08/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/3ee68f6a-85c3-4a34-88b4-bf1cfd33ecee", sport: boccia)
+Athlete.create(name: "Kayleigh Haggo", classification: "BC2", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.75,h_0.5,x_0.11,y_0.04/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/5f52742d-6504-46b9-94ed-b2824d42a474", sport: boccia)
+Athlete.create(name: "Will Arnott", classification: "BC3 (competition partner Connor Wellfare)", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.64,h_0.43,x_0.15,y_0.05/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/d263bd6b-05f5-47fe-9a8e-a6e255a69130", sport: boccia)
+Athlete.create(name: "Sally Kidson", classification: "BC3 (competition partner Hannah Stewart)", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.69,h_0.46,x_0.1,y_0.12/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/b661dfb8-9b4c-49a2-90e7-703c23f19f19", sport: boccia)
+
+puts "seeding Badminton athletes... (4)"
+Athlete.create(name: "Jack Shephard", classification: "SH6", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.89,h_0.89,x_0.05,y_0.05/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/9be4c001-dff7-41b9-a167-1c086ac38ed0", sport: badminton)
+Athlete.create(name: "Daniel Bethell", classification: "SL3", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.66,h_0.44,x_0.19,y_0.03/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/b824fbb6-4046-41db-8080-b25801337381", sport: badminton)
+Athlete.create(name: "Krysten Coombs", classification: "SH6 Men's Singles", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.88,h_0.59,x_0.11,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/d6befddc-dd75-49f3-93ea-39cbd6c43ea6", sport: badminton)
+Athlete.create(name: "Rachel Choong", classification: "SH6", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.87,h_0.58,x_0.07,y_0.01/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/b45fc8b3-b434-4abe-9509-05d0e51de94c", sport: badminton)
+
+puts "seeding Canoe athletes... (9)"
+Athlete.create(name: "Dave Philipson", classification: "KL2 & VL3", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.56,h_0.38,x_0.2,y_0.06/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/fb0d2802-74c7-41f6-b18c-26e4cb1f354a", sport: canoe)
+Athlete.create(name: "Laura Sugar", classification: "KL3", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.04/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/304b7b22-8b5d-492c-8fcd-0b59a6d34a4a", sport: canoe)
+Athlete.create(name: "Charlotte Henshaw", classification: "KL2", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.59,h_0.74,x_0.23,y_0.09/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/93944a51-07b6-4e1b-bd69-009c80e21a4b", sport: canoe)
+Athlete.create(name: "Emma Wiggs", classification: "KL2 & VL2", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.51,h_0.72,x_0.11,y_0.13/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/71e9b5db-d5dc-4440-8384-c9c4e34d4034", sport: canoe)
+Athlete.create(name: "Rob Oliver", classification: "KL1", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.85,h_0.57,x_0.03,y_0.04/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/ccab555d-943d-41b2-a3f6-bbc7ea8fc3c8", sport: canoe)
+Athlete.create(name: "Jeanette Chippington", classification: "KL1", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.57,h_0.85,x_0.15,y_0.15/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/4b06e0c9-e921-4359-a6ee-fab611a15d7b", sport: canoe)
+Athlete.create(name: "Hope Gordon", classification: "VL3 & KL3", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/a642b335-764e-42ac-a54c-49bd39a00345", sport: canoe)
+Athlete.create(name: "Jack Eyers", classification: "VL3", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.76,h_0.51,x_0.12,y_0.02/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/b0a67fc0-dd1a-4439-993b-4e6552e13ccc", sport: canoe)
+Athlete.create(name: "Ed Clifton", classification: "VL2", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.69,h_0.46,x_0.2,y_0.15/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/0142bb1c-cabd-408d-9f25-46b4ae6ff891", sport: canoe)
+
+puts "seeding Cycling athletes... (23)"
+Athlete.create(name: "James Ball", classification: "Men’s B, piloted by Steffan Lloyd", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.42,h_0.63,x_0.36,y_0.12/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/95c1d03a-ae1c-4bea-9aea-8bca8ddc9b56", sport: cycling)
+Athlete.create(name: "Stephen Bate", classification: "Men’s B, piloted by Chris Latham", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.5,h_0.74,x_0.24,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/190ce39b-d4ae-4f8f-9ca5-729579ecf2a5", sport: cycling)
+Athlete.create(name: "Neil Fachie", classification: "Men’s B, piloted by Matt Rotherham", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.58,h_0.87,x_0.25,y_0.13/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/1ddaf130-2e5a-43d5-9bbc-5bab93570997", sport: cycling)
+Athlete.create(name: "Lora Fachie", classification: "Women’s B, piloted by Corrine Hall", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.07/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/fa6b6f18-6fc1-4a4e-b313-90b34de62877", sport: cycling)
+Athlete.create(name: "Jody Cundy", classification: "C4", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.82,h_0.55,x_0.15,y_0.03/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/4ee73937-25b7-4121-a5b6-c64c082d8ecb", sport: cycling)
+Athlete.create(name: "Sarah Storey", classification: "C5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.31,h_0.21,x_0.32,y_0.2/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/6b24bf37-daed-4d5c-990e-870abf26e64b", sport: cycling)
+Athlete.create(name: "Corrine Hall", classification: "Women’s B, pilot for Lora Fachie", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.54,h_0.81,x_0.18,y_0.1/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/16e34645-a24e-4897-8112-2ed71590e599", sport: cycling)
+Athlete.create(name: "Kadeena Cox", classification: "C4", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.54,h_0.8,x_0.21,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/78a789cb-258a-492e-a9b1-e6eac4eded00", sport: cycling)
+Athlete.create(name: "Sophie Unwin", classification: "Women’s B, piloted by Jenny Holl", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.52,h_0.77,x_0.24,y_0.23/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/3ab73565-e599-4f26-b6ca-0c8d186640d9", sport: cycling)
+Athlete.create(name: "Jenny Holl", classification: "Women’s B, pilot for Sophie Unwin", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.37,h_0.55,x_0.56,y_0.16/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/2b4f1585-ee85-4e25-aae3-7fa88d868401", sport: cycling)
+Athlete.create(name: "Matt Rotherham", classification: "Men’s B, pilot for Neil Fachie", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.5,h_0.33,x_0.36,y_0.07/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/864eb868-7b3d-4024-a6ed-304ea6e8bac9", sport: cycling)
+Athlete.create(name: "Fin Graham", classification: "C3", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.77,h_0.51,x_0.03,y_0.03/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/6519cbf2-7231-414a-9ad4-28294dd18771", sport: cycling)
+Athlete.create(name: "Jaco van Gass", classification: "C3", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.67,h_1,x_0.17,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/a1fb455b-eacf-4c6a-b56e-9fa808d3ae13", sport: cycling)
+Athlete.create(name: "Ben Watson", classification: "C3", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.71,x_0,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/a80a73a0-b1ef-40d9-8396-e9409490cfee", sport: cycling)
+Athlete.create(name: "Fran Brown", classification: "C1", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.75,h_0.5,x_0.14,y_0.06/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/f2dff41a-ac57-4198-b5ce-e21e9d8c7009", sport: cycling)
+Athlete.create(name: "Steffan Lloyd", classification: "Men's B, pilot for James Ball", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.63,h_0.94,x_0.19,y_0.04/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/dd82093f-a35f-42f4-a704-79c78c36fc04", sport: cycling)
+Athlete.create(name: "Blaine Hunt", classification: "C5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.99,h_0.66,x_0,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/63bf31c5-77b9-4e08-bb97-633cca843c32", sport: cycling)
+Athlete.create(name: "Chris Latham", classification: "Men's B, pilot for Steve Bate", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.64,h_1,x_0.14,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/55ba9070-8d2e-45ab-ab34-fd5455242e53", sport: cycling)
+Athlete.create(name: "Lizzi Jordan", classification: "Women's B, piloted by Danni Khan", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.84,h_0.56,x_0.05,y_0.04/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/fc63e73c-0b62-4b76-9b7a-b6eaf678805f", sport: cycling)
+Athlete.create(name: "Archie Atkinson", classification: "C4", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.73,h_0.49,x_0.11,y_0.08/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/b10623be-75a8-42d9-af65-eaac0ec8e288", sport: cycling)
+Athlete.create(name: "Daphne Schrager", classification: "C2", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.02/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/b4b402c1-2306-4de1-8091-5c42209a4762", sport: cycling)
+Athlete.create(name: "Danni Khan", classification: "Women's B, Pilot for Lizzi Jordan", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.89,h_0.59,x_0.07,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/a2d5111d-d66a-4dd2-9d0b-ecc212c1a786", sport: cycling)
+Athlete.create(name: "Matthew Robertson", classification: "C2", image_url: "https://res.cloudinary.com/paralympics/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/1ccafca5-c273-4d37-a280-e3a5b99c5964", sport: cycling)
+
+puts "seeding Equestrian athletes... (4)"
+Athlete.create(name: "Sophie Wells", classification: "Grade 5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.56,h_0.37,x_0.19,y_0.11/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/444520ce-8195-4f66-8ef8-3a7991f1fefb", sport: equestrian)
+Athlete.create(name: "Natasha Baker", classification: "Grade 3", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.72,h_0.48,x_0.12,y_0.05/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/f496ff90-81ee-4e24-a3bf-62dd1f336871", sport: equestrian)
+Athlete.create(name: "Georgia Wilson", classification: "Grade 2", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.66,h_0.44,x_0.17,y_0.09/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/a2d1d547-db1f-42eb-a000-99dea67df4f1", sport: equestrian)
+Athlete.create(name: "Mari Durward-Akhurst", classification: "Grade 1", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.82,h_0.55,x_0.07,y_0.17/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/942752b1-4219-40dc-947c-e9307118ac09", sport: equestrian)
+
+puts "seeding Football 5-a-side athletes... (0)"
+
+puts "seeding Goalball athletes... (0)"
+
+puts "seeding Judo athletes... (3)"
+Athlete.create(name: "Chris Skelley", classification: "J2 +90kg", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.71,h_1,x_0.14,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/f72bcb6d-9da8-40f2-886e-5768a147fe55", sport: judo)
+Athlete.create(name: "Daniel Powell", classification: "J1 -90kg", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.8,h_1,x_0.09,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/716f37ee-6ec7-4c85-a09a-592c678799c4", sport: judo)
+Athlete.create(name: "Evan Molloy", classification: "J2 -90kg", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.81,h_0.81,x_0.1,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/1db133f5-a7ba-42ad-a267-a4beab48da1d", sport: judo)
+
+puts "seeding Para Athletics athletes... (34)"
+Athlete.create(name: "Karé Adenegan", classification: "T34 100m & 800m", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.27,h_0.37,x_0.36,y_0.08/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/c1702ed3-6512-40b6-9a76-753707e5452a", sport: para_athletics)
+Athlete.create(name: "Sophie Hahn", classification: "T38 100m", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.32,h_0.48,x_0.38,y_0.14/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/03defe58-a972-416f-8f92-741d713821e1", sport: para_athletics)
+Athlete.create(name: "Sammi Kinghorn", classification: "T53 100m, 400m, 800m and 4x100m relay", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.47,h_0.63,x_0.23,y_0.06/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/c940cbec-b434-42a3-aaa8-7c244a9569dd", sport: para_athletics)
+Athlete.create(name: "Sabrina Fortune", classification: "F20 shot put", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/a2442a2b-2c15-4931-9e75-00be9a4a96ca", sport: para_athletics)
+Athlete.create(name: "Olivia Breen", classification: "T38 long jump and 100m", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.28,h_0.44,x_0.34,y_0.06/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/cb5ea479-4286-4370-95f8-e1be00c9d8ed", sport: para_athletics)
+Athlete.create(name: "Kadeena Cox", classification: "T38", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.54,h_0.8,x_0.21,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/78a789cb-258a-492e-a9b1-e6eac4eded00", sport: para_athletics)
+Athlete.create(name: "Jonnie Peacock", classification: "T64 100m and 4x100m relay", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.74,h_0.94,x_0.12,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/7649af10-9574-41ba-805c-86b5453b0cc2", sport: para_athletics)
+Athlete.create(name: "Jonathan Broom-Edwards", classification: "T64 High jump", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.05/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/4e1e4e7e-7dd2-41fd-9962-37e084a12df0", sport: para_athletics)
+Athlete.create(name: "Isaac Towers", classification: "T34 800m", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.79,h_1,x_0.09,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/5bb238bc-b77c-407d-9b6e-ca20341d6d74", sport: para_athletics)
+Athlete.create(name: "Hollie Arnold", classification: "F46 Javelin", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.03/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/0c2af09c-bc8d-4a64-8ae4-67a8749a9895", sport: para_athletics)
+Athlete.create(name: "Hannah Cockroft", classification: "T34 100m & 800m", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.03/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/bdca8dc6-bdd8-450e-b1d8-02076b513c6a", sport: para_athletics)
+Athlete.create(name: "David Weir", classification: "T54 1500m, 5000m, marathon", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.27,h_0.41,x_0.36,y_0.06/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/1d01e43e-293d-4ec5-9f7f-dd08fb35f0dc", sport: para_athletics)
+Athlete.create(name: "Aled Davies", classification: "F63 shot put", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.44,h_0.8,x_0.27,y_0.09/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/23322889-d500-4481-85d2-7ba065ede69c", sport: para_athletics)
+Athlete.create(name: "Thomas Young", classification: "T38 100m", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.79,h_1,x_0.04,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/d30a4e8e-5d26-449a-a7f1-ba47b9b24a90", sport: para_athletics)
+Athlete.create(name: "Anna Nicholson", classification: "F35 shot put", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.64,h_0.79,x_0.2,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/719169ae-bebb-4e2a-a9af-3d2af6a82594", sport: para_athletics)
+Athlete.create(name: "Hannah Taunton", classification: "T20 1500m", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.67,h_1,x_0.12,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/47a8a05a-319d-4cbc-86de-d5bdcc48ec2e", sport: para_athletics)
+Athlete.create(name: "Ali Smith", classification: "T38 100m, 400m and 4x100m relay", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.19,h_0.25,x_0.28,y_0.24/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/cb8dee30-5f15-4530-82fd-a31b10dd0a2e", sport: para_athletics)
+Athlete.create(name: "Fabienne André", classification: "T34 100m and 800m", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.79,h_1,x_0.03,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/773a7ba9-c356-4df2-bc87-8de78ed541fb", sport: para_athletics)
+Athlete.create(name: "Melanie Woods", classification: "T54 400m and 800m", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.79,h_1,x_0.08,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/62174ca0-7e5d-4673-830d-a6ada8fcb1d9", sport: para_athletics)
+Athlete.create(name: "Dan Greaves", classification: "F64 discus", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.83,h_1,x_0.05,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/9009e759-3ee1-4b39-a9b7-28146067eb28", sport: para_athletics)
+Athlete.create(name: "Nathan Maguire", classification: "T54 400m, 800m and 4x100m relay", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.47,h_0.63,x_0.21,y_0.04/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/a233735d-af1d-489a-8fee-1f08991ccbe8", sport: para_athletics)
+Athlete.create(name: "Luke Nuttall", classification: "T46 1500m", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.18,h_0.26,x_0.42,y_0.17/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/c823401d-c8dd-4706-bed1-e5302475e0dd", sport: para_athletics)
+Athlete.create(name: "Dan Pembroke", classification: "F13 javelin", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.08/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/2e87b1e2-a7ed-4167-bc28-84fee7a4f588", sport: para_athletics)
+Athlete.create(name: "Daniel Sidbury", classification: "T54 400m, 800m, 1500m and 5000m", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.72,h_1,x_0.19,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/db800719-5e0f-48ba-8435-a822f9253463", sport: para_athletics)
+Athlete.create(name: "Zak Skinner", classification: "T13 long jump and 100m", image_url: "https://res.cloudinary.com/paralympics/c_crop,x_0.15,y_0.59/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/361c2f90-b6b8-45f9-b63d-f61384bfe0ac", sport: para_athletics)
+Athlete.create(name: "Harrison Walsh", classification: "F64 discus", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.67,h_1,x_0.15,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/42e1cd7e-4cf3-4aa5-b0b1-cfd962bc9c6e", sport: para_athletics)
+Athlete.create(name: "Ben Sandilands", classification: "T20 1500m", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.28,h_0.4,x_0.37,y_0.14/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/4f82ca45-e916-4c10-a122-48307d6e23ed", sport: para_athletics)
+Athlete.create(name: "Karim Chan", classification: "T38 Long Jump", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.22,h_0.34,x_0.47,y_0.23/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/35cee7b3-e465-4d8b-ad54-e60d3c8636d5", sport: para_athletics)
+Athlete.create(name: "Zac Shaw", classification: "T12 100m", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.32,h_0.48,x_0.29,y_0.14/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/ccdea1c9-d301-4155-ab8e-f646cfd5c2a0", sport: para_athletics)
+Athlete.create(name: "Marcus Perrineau Daley", classification: "T52 100m", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.7,h_0.46,x_0.14,y_0.06/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/7f86624d-74f7-437f-96cd-c87cf6dd0fb3", sport: para_athletics)
+Athlete.create(name: "Didi Okoh", classification: "T63 100m", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.57,h_0.86,x_0.2,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/61b31ba4-6f67-4a84-90cc-41eeb48dac99", sport: para_athletics)
+Athlete.create(name: "Maddie Down", classification: "T38 Long Jump and 100m", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.77,h_0.63,x_0.06,y_0.08/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/e77d7cc0-616d-4a41-92cc-ed00ca278c87", sport: para_athletics)
+Athlete.create(name: "Funmi Oduwaiye", classification: "F64 Shot Put and Discus", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.38,h_0.25,x_0.33,y_0.17/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/9a6c8f58-c19f-4f97-ac78-9b920b2eb953", sport: para_athletics)
+Athlete.create(name: "Eden Rainbow-Cooper", classification: "T54", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.37,h_0.25,x_0.35,y_0.04/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/6ef0177f-580c-41b4-8371-7249f331e0e9", sport: para_athletics)
+
+puts "seeding Para Powerlifting athletes... (7)"
+Athlete.create(name: "Zoe Newson", classification: "Women’s up to 45kg", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.98,h_0.79,x_0.01,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/8f19cc04-9a24-4916-a69c-ea35d40b1fea", sport: para_powerlifting)
+Athlete.create(name: "Louise Sugden", classification: "Women’s up to 79kg", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.84,h_0.67,x_0.03,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/0b094308-f37a-43b5-9b86-a1bb2dce9a78", sport: para_powerlifting)
+Athlete.create(name: "Olivia Broome", classification: "Women’s up to 50kg", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.97,h_0.77,x_0,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/6b43d0ca-df24-4206-a10f-5a2cc01e5c66", sport: para_powerlifting)
+Athlete.create(name: "Liam McGarry", classification: "Men’s over 107kg", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.8,h_1,x_0.06,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/2c5ca2d3-3715-42d1-b277-25eb1e57f400", sport: para_powerlifting)
+Athlete.create(name: "Matt Harding", classification: "Men’s up to 80kg", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.93,h_0.72,x_0.03,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/8749b0a0-ab59-46ad-930f-14dbd6fa746d", sport: para_powerlifting)
+Athlete.create(name: "Lottie McGuinness", classification: "Women’s up to 55kg", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.03/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/8c90a398-7b88-4c70-8515-f815978c8d34", sport: para_powerlifting)
+Athlete.create(name: "Mark Swan", classification: "Men’s up to 65kg", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/411d54c1-2428-4b3d-bdd1-221cc4b60c60", sport: para_powerlifting)
+
+puts "seeding Para Swimming athletes... (27)"
+Athlete.create(name: "Alice Tai", classification: "S8/SB8/SM8", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.43,h_0.3,x_0.28,y_0.14/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/76f45675-723f-4b88-93df-b6273acd2cdd", sport: para_swimming)
+Athlete.create(name: "Rebecca Redfern", classification: "S13/SB13/SM13", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.83,x_0,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/013df0b8-24a9-4097-a101-d0b972217ca2", sport: para_swimming)
+Athlete.create(name: "Stephen Clegg", classification: "S12/SB12/SM12", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.55,h_0.68,x_0.24,y_0.06/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/6fa4b0f0-16f8-4a50-be2f-db26a31f5567", sport: para_swimming)
+Athlete.create(name: "Ellie Challis", classification: "S3/SB2/SM3", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.9,h_0.68,x_0.03,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/495c44f7-d81d-451b-952d-4b84ab3c41a7", sport: para_swimming)
+Athlete.create(name: "Louise Fiddes", classification: "S14/SB14/SM14", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.75,x_0,y_0.02/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/ccccfd51-ec2e-4e09-857a-d2a19372adc3", sport: para_swimming)
+Athlete.create(name: "Grace Harvey", classification: "S6/SB5/SM6", image_url: "https://res.cloudinary.com/paralympics/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/bb42eefc-de29-4ed3-b825-dc8173e884f0", sport: para_swimming)
+Athlete.create(name: "Suzanna Hext", classification: "S5/SB4/SM5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.47,h_0.61,x_0.4,y_0.08/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/bc4413f1-650c-4f3f-9dd7-458652682da3", sport: para_swimming)
+Athlete.create(name: "Tully Kearney", classification: "S5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.73,h_1,x_0.14,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/bc1b4d7b-9381-4885-929b-6476855df95c", sport: para_swimming)
+Athlete.create(name: "Louis Lawlor", classification: "S14/SB14/SM14", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.65,h_0.43,x_0.16,y_0.02/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/61441e59-9625-47ad-8536-c7dcf8a88ec7", sport: para_swimming)
+Athlete.create(name: "Toni Shaw", classification: "S9/SB9/SM9", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.72,h_0.48,x_0.13,y_0.1/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/e19f0aa6-bc14-4022-b8c3-9b5a7d5c7b89", sport: para_swimming)
+Athlete.create(name: "Maisie Summers-Newton", classification: "S6/SB6/SM6", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.95,x_0,y_0.04/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/caae9022-d5c8-45e5-b074-40b0dd32ebed", sport: para_swimming)
+Athlete.create(name: "Rhys Darbey", classification: "S14/SB14/SM14", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.38,h_0.57,x_0.33,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/79191239-5ac2-4b7f-8201-27c7bbc5d661", sport: para_swimming)
+Athlete.create(name: "Poppy Maskill", classification: "S14/SB14/SM14", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.64,h_0.83,x_0.13,y_0.06/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/5b099c98-bc7c-4510-a943-1434f2eadd8d", sport: para_swimming)
+Athlete.create(name: "Brock Whiston", classification: "S8, SB8, SM8", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.52,h_0.68,x_0.24,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/d0add20f-9697-4822-b0ba-f5cf5d6767d8", sport: para_swimming)
+Athlete.create(name: "Faye Rogers", classification: "S10/SB10/SM10", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.41,h_0.61,x_0.57,y_0.11/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/06af551e-2a7e-41d5-a9ae-33539726d079", sport: para_swimming)
+Athlete.create(name: "Scarlett Humphrey", classification: "S11/SB11/SM11", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.86,h_0.57,x_0.07,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/3d4b603a-ae7b-47e8-8bca-ab5cefd47198", sport: para_swimming)
+Athlete.create(name: "William Ellard", classification: "S14/SB14/SM14", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.39,h_0.54,x_0.32,y_0.01/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/2ae2d76c-0520-49a3-ae38-1cae94813327", sport: para_swimming)
+Athlete.create(name: "Cameron Vearncombe", classification: "S14/SB14/SM14", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.76,h_0.51,x_0.12,y_0.03/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/383ca354-52f1-4f10-b3aa-3e51ca2a994a", sport: para_swimming)
+Athlete.create(name: "Eliza Humphrey", classification: "S11/SB11/SM11", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.76,h_0.51,x_0.11,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/c22cc306-0ea3-4ce0-b38b-744f784e9dd5", sport: para_swimming)
+Athlete.create(name: "Olivia Newman-Baronius", classification: "S14/SB14/SM14", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.56,h_0.39,x_0.25,y_0.02/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/77a61e8f-fd1f-4d3f-8f2f-395830646890", sport: para_swimming)
+Athlete.create(name: "Iona Winnifrith", classification: "S7/SB7/SM7", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.38,h_0.51,x_0.26,y_0.13/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/6f62f85d-a651-4946-b1c6-ec84722abdb0", sport: para_swimming)
+Athlete.create(name: "Callie-Ann Warrington", classification: "S10/SB10/SM10", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.35,h_0.52,x_0.06,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/086ebe8c-ce4e-4191-a8c5-7fb9b49160b0", sport: para_swimming)
+Athlete.create(name: "Megan Neave", classification: "S14/SB14/SM14", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.44,h_0.66,x_0.44,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/4bc25d11-bb6d-46b2-8faa-fe977bfb6182", sport: para_swimming)
+Athlete.create(name: "Mark Tompsett", classification: "S14/SB14/SM14", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.63,h_0.5,x_0.21,y_0.03/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/a690daf6-e09b-48d5-974a-c717c8640c15", sport: para_swimming)
+Athlete.create(name: "Bruce Dee", classification: "S6/SB6/SM6", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.51,h_0.77,x_0.15,y_0.05/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/c8607a13-cc63-49da-abd6-09e4e900ea1d", sport: para_swimming)
+Athlete.create(name: "Harry Stewart", classification: "S14/SB14/SM14", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.3,h_0.41,x_0.38,y_0.29/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/7f6e3bcf-c52f-4bf8-a2ae-b34f2e3bb576", sport: para_swimming)
+Athlete.create(name: "Matthew Redfern", classification: "S13/SB13/SM13", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.67,h_0.45,x_0.17,y_0.06/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/5a21b52c-44a6-45af-ac8a-5e592cc8b939", sport: para_swimming)
+
+puts "seeding Rowing athletes... (10)"
+Athlete.create(name: "Lauren Rowles", classification: "Mixed Sculls PR2", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.78,h_0.52,x_0.16,y_0.04/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/7f73d524-49bd-4fc1-bb83-19070b38b6fa", sport: rowing)
+Athlete.create(name: "Benjamin Pritchard", classification: "PR1 M1x", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.34,h_0.52,x_0.37,y_0.08/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/1fcd8828-8fa9-48d9-8d62-52305331e64b", sport: rowing)
+Athlete.create(name: "Giedre Rakauskaite", classification: "PR3 Mix4x", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.49,h_0.74,x_0.32,y_0.04/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/76fa35a4-e943-4e43-932f-80124e2a41e8", sport: rowing)
+Athlete.create(name: "Erin Kennedy", classification: "PR3 Mix4+ (COX)", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.02/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/51804665-b97b-42cd-8ee7-f17d48ab5d8d", sport: rowing)
+Athlete.create(name: "Annie Caddick", classification: "Mixed Double Sculls PR3", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.76,h_0.5,x_0.13,y_0.09/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/e0356ca4-f45b-446f-8338-202302ed7fd9", sport: rowing)
+Athlete.create(name: "Sam Murray", classification: "Mixed Double Sculls PR3", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.29,h_0.43,x_0.36,y_0.15/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/3c82f48b-7f57-4b33-ade9-ce1fddf0363a", sport: rowing)
+Athlete.create(name: "Gregg Stevenson", classification: "Mixed Sculls PR2", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.85,h_0.57,x_0.09,y_0.04/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/dd00f3ec-6eb8-41e9-bef5-0a73792252d3", sport: rowing)
+Athlete.create(name: "Frankie Allen", classification: "PR3 Mix4x", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.08/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/7403d920-fd16-4877-aa4e-99e0a5e4cc15", sport: rowing)
+Athlete.create(name: "Ed Fuller", classification: "PR3 Mix4x", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.42,h_0.62,x_0.36,y_0.08/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/97cf4e84-18a4-4187-9e94-44518530f0cd", sport: rowing)
+Athlete.create(name: "Josh O'Brien", classification: "PR3 Mix4x", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.77,h_0.51,x_0.09,y_0.08/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/6f937cf1-99e4-4f75-8f13-cb2f6fe5a190", sport: rowing)
+
+puts "seeding Shooting Para Sport athletes... (4)"
+Athlete.create(name: "Issy Bailey", classification: "P3", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.56,h_1,x_0.22,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/c43eab77-8452-410c-a467-ac6c2128ac5a", sport: shooting_para_sport)
+Athlete.create(name: "Matt Skelhon", classification: "SH1", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.85,h_0.57,x_0,y_0.05/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/17fc6568-a6e1-4e6d-b7fb-ec173cad6dde", sport: shooting_para_sport)
+Athlete.create(name: "Ryan Cockbill", classification: "SH2 /SH1", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.65,h_0.91,x_0.15,y_0.03/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/71201890-e83a-47b8-8cda-7ab8e32b0da4", sport: shooting_para_sport)
+Athlete.create(name: "Tim Jeffery", classification: "SH2 / SH1", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.56,h_1,x_0.24,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/b7b6d5b0-33c5-4a3c-bd43-187529f10ff0", sport: shooting_para_sport)
+
+puts "seeding Sitting Volleyball athletes... (0)"
+
+puts "seeding Table Tennis athletes... (11)"
+Athlete.create(name: "Will Bayley", classification: "Class 7 singles, class 14 doubles", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.75,h_0.5,x_0.1,y_0.02/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/88b9820b-1f71-4d4c-a54f-031dbaa6e281", sport: table_tennis)
+Athlete.create(name: "Paul Karabardak", classification: "Class 6 singles, class 14 doubles", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.86,h_0.57,x_0.06,y_0.03/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/fd6a5dd7-1f8d-4f3e-944a-b1f27e00caef", sport: table_tennis)
+Athlete.create(name: "Aaron McKibbin", classification: "Class 8 singles, class 18 doubles", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.85,h_0.56,x_0.09,y_0.06/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/d40d0bd7-cd7b-426c-9951-794e9f10540d", sport: table_tennis)
+Athlete.create(name: "Rob Davies", classification: "Class 1 singles, class 4 doubles", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.75,h_0.5,x_0.09,y_0.11/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/099d49e0-465f-48b5-9629-3409c24d6d53", sport: table_tennis)
+Athlete.create(name: "Billy Shilton", classification: "Class 8 singles, class 14 doubles", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.93,h_0.62,x_0.07,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/8d950f03-3a90-41ff-b5b4-1d58d63831a8", sport: table_tennis)
+Athlete.create(name: "Joshua Stacey", classification: "Class 9 singles, class 18 doubles, mixed class 17 doubles", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.91,h_0.61,x_0.04,y_0.03/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/4163e6f3-24af-42d6-ac10-52790a35eac6", sport: table_tennis)
+Athlete.create(name: "Megan Shackleton", classification: "Class 4 singles, mixed class 7 doubles", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.75,x_0,y_0.22/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/4596d2b2-f912-4993-bd59-436ae436128c", sport: table_tennis)
+Athlete.create(name: "Tom Matthews", classification: "Class 1 singles, class 4 doubles, class 7 doubles", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.86,h_0.64,x_0,y_0.25/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/619c8e4e-fff2-4adf-a420-370cb5c7397f", sport: table_tennis)
+Athlete.create(name: "Martin Perry", classification: "Class 6 singles, class 14 doubles", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.85,h_0.57,x_0.04,y_0.03/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/64e6dc03-6fdb-49a1-9c57-f20eea66c33e", sport: table_tennis)
+Athlete.create(name: "Fliss Pickard", classification: "Class 6 singles, class 14 doubles", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.82,h_0.55,x_0.04,y_0.06/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/0da842df-c08c-42ba-929e-a0f8eafc23d7", sport: table_tennis)
+Athlete.create(name: "Bly Twomey", classification: "Class 7 singles, class 14 doubles, mixed class 17 doubles", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.06/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/4469ff50-f8ec-41b6-9dd9-2e1a13738cbd", sport: table_tennis)
+
+puts "seeding Taekwondo athletes ... (3)"
+Athlete.create(name: "Amy Truesdale", classification: "K44", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.74,h_0.59,x_0.16,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/b877433e-06e2-460d-9195-f30a9f01683b", sport: taekwondo)
+Athlete.create(name: "Matt Bush", classification: "K44", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.98,h_0.78,x_0.02,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/49911089-e6d0-4ec0-9c49-ad9a70f3b116", sport: taekwondo)
+Athlete.create(name: "Beth Munro", classification: "K44", image_url: "https://res.cloudinary.com/paralympics/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/36b05717-7cb3-4361-900f-4978f99387a5", sport: taekwondo)
+
+puts "seeding Triathlon athletes ... (14)"
+Athlete.create(name: "Lauren Steadman", classification: "PTS5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.85,h_0.57,x_0.1,y_0.16/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/8533ac6c-d028-4e92-8c5a-3bfe05a1cf35", sport: triathlon)
+Athlete.create(name: "Alison Peasgood", classification: "PTVI", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.8,h_1,x_0.13,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/511aba29-577b-44d9-97c2-0554cc47b48a", sport: triathlon)
+Athlete.create(name: "Melissa Nicholls", classification: "PTWC", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.84,h_0.56,x_0.1,y_0.18/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/95e63600-7e1f-47d1-8ac1-9e8868d11e9c", sport: triathlon)
+Athlete.create(name: "Claire Cashmore", classification: "PTS5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.99,h_0.66,x_0,y_0.01/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/1087a80b-2c2b-4269-8075-39eb1f8068f6", sport: triathlon)
+Athlete.create(name: "Dave Ellis", classification: "PTVI", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.67,h_1,x_0.14,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/8c311c22-b5b1-4b94-b60d-c4c15ecbe4dc", sport: triathlon)
+Athlete.create(name: "Luke Pollard", classification: "Guide PTVI", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.67,h_1,x_0.19,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/8625df85-cd4b-42fa-bf73-2e35f5f9d1f5", sport: triathlon)
+Athlete.create(name: "Michael Taylor", classification: "PTS4", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.71,h_0.48,x_0.11,y_0.17/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/c444502e-7b95-4a05-97c0-dfb2031bf340", sport: triathlon)
+Athlete.create(name: "Finley Jakes", classification: "PTS4", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.67,h_1,x_0.18,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/6a17e544-7cb1-4cca-8e82-e8ba12f1f427", sport: triathlon)
+Athlete.create(name: "Megan Richter", classification: "PTS4", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.05/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/d7c6c147-7061-4caa-a7bb-95bbfb75b99f", sport: triathlon)
+Athlete.create(name: "Hannah Moore", classification: "PTS4", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.8,h_1,x_0.13,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/b3fd4b09-5ecb-476c-a125-aa07be7f4028", sport: triathlon)
+Athlete.create(name: "Henry Urand", classification: "PTS3", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.07/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/84e2b876-fd47-4667-9a6a-5a29cd822af2", sport: triathlon)
+Athlete.create(name: "Brooke Gillies", classification: "Guide PTVI", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/3345598b-bfe2-44a8-a407-33477fec1e84", sport: triathlon)
+Athlete.create(name: "Oscar Kelly", classification: "PTVI", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.8,x_0,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/e4b05c63-e8d1-4e2d-869c-17909832b84a", sport: triathlon)
+Athlete.create(name: "Charlie Harding", classification: "Guide PTVI", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.67,h_0.45,x_0.16,y_0.02/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/f49ab159-60da-4875-9dc7-8da3776c073d", sport: triathlon)
+
+puts "seeding Wheelchair Basketball athletes... (24)"
+Athlete.create(name: "Laurie Williams", classification: "2.5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.79,h_0.52,x_0.12,y_0.07/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/68e930af-f7a3-4565-8844-a3d7b86507e2", sport: wheelchair_basketball)
+Athlete.create(name: "Katie Morrow", classification: "4.5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.8,h_0.53,x_0.09,y_0.03/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/ab231dbe-a5b8-4771-8ab3-e0244115eec6", sport: wheelchair_basketball)
+Athlete.create(name: "Charlotte Moore", classification: "1.0", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.77,h_0.51,x_0.09,y_0.02/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/1537e92c-fb61-4f6c-a17e-8ed291715475", sport: wheelchair_basketball)
+Athlete.create(name: "Robyn Love", classification: "3.5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.67,h_1,x_0.24,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/8a6189f2-d8d6-4293-bfd2-76b7a26c2163", sport: wheelchair_basketball)
+Athlete.create(name: "Joy Haizelden", classification: "2.5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.69,h_0.46,x_0.21,y_0.08/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/26af96e5-41f0-4e4e-afaf-75d89041c984", sport: wheelchair_basketball)
+Athlete.create(name: "Helen Freeman", classification: "4.0", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.71,h_1,x_0.13,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/3d7800b1-0ccc-4766-9955-14b6a7b00b71", sport: wheelchair_basketball)
+Athlete.create(name: "Amy Conroy", classification: "4.0", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.88,h_0.59,x_0.03,y_0.01/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/dc6b8e98-4627-4f70-96a9-a41919dbe2cf", sport: wheelchair_basketball)
+Athlete.create(name: "Sophie Carrigill", classification: "1.0", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.75,h_0.5,x_0.18,y_0.07/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/ebdb19d2-c6b4-4b38-b2ab-ddbd84162ad3", sport: wheelchair_basketball)
+Athlete.create(name: "Lee Manning", classification: "4.5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.6,h_0.4,x_0.1,y_0.01/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/21aba992-6ffe-44f4-a239-11b81bcc210f", sport: wheelchair_basketball)
+Athlete.create(name: "Gregg Warburton", classification: "2.0", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.64,h_0.43,x_0.27,y_0.07/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/eba98711-33fe-4952-98ea-e37afc781575", sport: wheelchair_basketball)
+Athlete.create(name: "Phil Pratt", classification: "3.0", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.72,h_0.48,x_0.16,y_0.02/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/5088e22c-78b0-410a-9d85-8609bb2766e3", sport: wheelchair_basketball)
+Athlete.create(name: "Abdi Jama", classification: "1.0", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.76,h_0.51,x_0.06,y_0.05/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/716fc6bd-eebf-4642-8901-b921b50537dc", sport: wheelchair_basketball)
+Athlete.create(name: "Harry Brown", classification: "2.5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.02/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/38c946f7-d306-45f6-8871-ed7c94919f7f", sport: wheelchair_basketball)
+Athlete.create(name: "Terry Bywater", classification: "4.5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.06/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/d1161d1b-d383-4f6a-8f24-891792dac923", sport: wheelchair_basketball)
+Athlete.create(name: "Kyle Marsh", classification: "2.0", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.65,h_0.43,x_0.12,y_0.04/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/cf8b8d3d-f0f6-4047-99c0-aa08963c7e5a", sport: wheelchair_basketball)
+Athlete.create(name: "Simon Brown", classification: "1.0", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.64,h_0.43,x_0.16,y_0.04/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/6b1b7130-e04c-47fa-8bf2-595d144bca10", sport: wheelchair_basketball)
+Athlete.create(name: "Lucy Robinson", classification: "4.5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.41,h_0.58,x_0.29,y_0.02/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/251c36fd-d630-4d9c-bc75-81f1086917a9", sport: wheelchair_basketball)
+Athlete.create(name: "Ben Fox", classification: "4.0", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.09/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/e1f2595b-686d-4cc7-88f0-3529f02ce262", sport: wheelchair_basketball)
+Athlete.create(name: "Jim Palmer", classification: "1.0", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.63,h_0.45,x_0.2,y_0.05/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/9297daa2-ba81-446b-9563-0225190cdf66", sport: wheelchair_basketball)
+Athlete.create(name: "Lee Fryer", classification: "4.0", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.02/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/63cd785f-c436-40b8-8b74-b938a370d48b", sport: wheelchair_basketball)
+Athlete.create(name: "Peter Cusack", classification: "3.5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.73,h_0.49,x_0.1,y_0.02/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/9764640b-60ff-45ef-a96a-daa41cb853cc", sport: wheelchair_basketball)
+Athlete.create(name: "Jade Atkin", classification: "4.5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.78,h_0.52,x_0,y_0.06/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/d758ab25-ff0c-48d7-8d33-079e41612c34", sport: wheelchair_basketball)
+Athlete.create(name: "Maddie Martin", classification: "3.0", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.55,h_0.37,x_0.27,y_0.11/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/42cbbd5c-96ef-4e40-8892-83ebd1d0b84a", sport: wheelchair_basketball)
+Athlete.create(name: "Jodie Waite", classification: "1.0", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.73,h_0.49,x_0.12,y_0.09/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/9a650953-f4c0-4363-a29b-4e35ed837faa", sport: wheelchair_basketball)
+
+puts "seeding Wheelchair Fencing athletes... (4)"
+Athlete.create(name: "Piers Gillver", classification: "Category A", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.54,h_0.36,x_0.11,y_0.11/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/365ee0e8-8fb8-490d-b65f-052f5173d8d3", sport: wheelchair_fencing)
+Athlete.create(name: "Dimitri Coutya", classification: "Category B", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.33,h_0.49,x_0.23,y_0.1/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/478e9b91-1a86-4220-bacc-1496f69fe1d1", sport: wheelchair_fencing)
+Athlete.create(name: "Oliver Lam-Watson", classification: "Category A", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.6,h_0.4,x_0.18,y_0.11/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/ea68602f-3bbc-4ff9-b522-172cdf5a4547", sport: wheelchair_fencing)
+Athlete.create(name: "Gemma Collis", classification: "Category A", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.7,h_0.47,x_0.16,y_0.16/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/52a69f72-9253-41ff-99b8-aa8c6457d810", sport: wheelchair_fencing)
+
+puts "seeding Wheelchair Rugby athletes... (12)"
+Athlete.create(name: "Jonathan Coggan", classification: "0.5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.53,h_0.35,x_0.21,y_0.2/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/5d04db2a-455e-4d40-ae08-13a71e8bcb5d", sport: wheelchair_rugby)
+Athlete.create(name: "Jamie Stead", classification: "2.5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.67,h_0.45,x_0.09,y_0.09/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/b3414f9b-4e66-4fdc-b6a2-89928c794895", sport: wheelchair_rugby)
+Athlete.create(name: "Gavin Walker", classification: "2.0", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.22,h_0.31,x_0.4,y_0.12/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/07001496-fe02-4af5-a070-591de7ccbb6c", sport: wheelchair_rugby)
+Athlete.create(name: "Aaron Phipps", classification: "3.5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.89,h_0.59,x_0.01,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/639f55b6-4973-4ebc-9718-6c41bd50c98f", sport: wheelchair_rugby)
+Athlete.create(name: "Jack Smith", classification: "0.5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.4,h_0.61,x_0.4,y_0.03/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/d0d7c02a-cacc-4e33-b403-b9db515df9c9", sport: wheelchair_rugby)
+Athlete.create(name: "Nick Cummins", classification: "1.5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.64,h_0.43,x_0.13,y_0.1/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/3ebfb6c2-30a9-453c-9a5d-9b70200b071c", sport: wheelchair_rugby)
+Athlete.create(name: "Stuart Robinson", classification: "3.5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.89,h_0.59,x_0.02,y_0.05/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/9dc4d981-15cc-4fc6-8c9b-e37bddf5d54d", sport: wheelchair_rugby)
+Athlete.create(name: "Dan Kellett", classification: "1.0", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.87,h_0.58,x_0.03,y_0.1/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/eb8f7f3f-8cec-4e63-800b-0095f03c2b4c", sport: wheelchair_rugby)
+Athlete.create(name: "Kieran Flynn", classification: "2.0", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.61,h_0.4,x_0.18,y_0.11/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/022508e3-899a-420d-8090-acd85039993e", sport: wheelchair_rugby)
+Athlete.create(name: "David Ross", classification: "2.0", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.23,h_0.34,x_0.37,y_0.06/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/d09aba2b-1c2b-4cf8-9213-23cab63b0b3f", sport: wheelchair_rugby)
+Athlete.create(name: "Ollie Mangion", classification: "3.0", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.76,h_0.5,x_0.07,y_0.07/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/4795315b-6047-405e-972a-94396b8907ad", sport: wheelchair_rugby)
+Athlete.create(name: "Tyler Walker", classification: "3.5", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.64,h_0.43,x_0.2,y_0.12/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/9e93e1b2-c3a1-4886-8ff3-763474957b2e", sport: wheelchair_rugby)
+
+puts "seeding Wheelchair Tennis athletes... (8)"
+Athlete.create(name: "Lucy Shuker", classification: "Open", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.94,h_0.62,x_0.01,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/12e2009f-ff7c-41a3-bab1-8ded0a1caf62", sport: wheelchair_tennis)
+Athlete.create(name: "Gordon Reid", classification: "Open", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.09/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/38bbaabd-f6b5-4652-91d3-f94abb240e93", sport: wheelchair_tennis)
+Athlete.create(name: "Alfie Hewett", classification: "Open", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.05/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/db9d8181-1a33-4b17-b7cf-0ec1b292778a", sport: wheelchair_tennis)
+Athlete.create(name: "Andy Lapthorne", classification: "Quad", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.8,h_1,x_0.12,y_0/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/c339bfc4-c37f-498d-a19c-6e8c5ba311e6", sport: wheelchair_tennis)
+Athlete.create(name: "Ben Bartram", classification: "Open", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_1,h_0.67,x_0,y_0.05/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/9baa5213-ff95-4ebd-98fe-33caf7677f9e", sport: wheelchair_tennis)
+Athlete.create(name: "Dahnan Ward", classification: "Open", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.72,h_0.48,x_0.17,y_0.02/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/5f4c23d2-94e9-4ff5-aa6b-66bc9660aee3", sport: wheelchair_tennis)
+Athlete.create(name: "Abbie Breakwell", classification: "Open", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.81,h_0.6,x_0.19,y_0.05/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/9688b5d0-2807-4669-a8e3-8d8cd7fb474e", sport: wheelchair_tennis)
+Athlete.create(name: "Greg Slade", classification: "Quad", image_url: "https://res.cloudinary.com/paralympics/c_crop,w_0.55,h_0.83,x_0.22,y_0.06/c_fill,w_330,h_220/q_auto:good,f_auto,fl_lossy/3813e1ee-4597-415b-b5af-61c64aafdbe1", sport: wheelchair_tennis)
