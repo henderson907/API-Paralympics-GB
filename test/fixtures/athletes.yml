@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  classification: MyString
+  image_url: MyString
+  sport: one
+
+two:
+  name: MyString
+  classification: MyString
+  image_url: MyString
+  sport: two
